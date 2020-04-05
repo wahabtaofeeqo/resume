@@ -1,0 +1,794 @@
+$color: lightblue
+$white: #FFFFFF
+$font: Roboto
+$lineColor: #777777
+$primary: #333333
+$primaryDark: #444444
+
+
+// Layout
+.wrapper
+	padding: 0
+	margin: 0
+	min-height: 100%
+	background: $primary
+	display: none
+
+.col-img
+	width: 45%
+	height: 100%
+	position: fixed
+	top: 0
+	overflow: hidden
+	background: url('/assets/images/me.jpg')
+	background-size: 100% 100%
+	filter: invert(1) brightness(100%)
+
+.col-content
+	width: 55%
+	margin-left: 45%
+	min-height: 100%
+
+.main
+	margin-right: 80px
+	min-height: 100%
+	height: auto
+
+
+@media only screen and (min-width: 600px)
+
+	.col-img, .col-content 
+		width: 100%
+		margin: 0
+
+	.col-img
+		position: relative
+		height: 600px
+
+	.main
+		margin: 0
+
+	.sidebar
+		display: none
+
+
+
+
+// Hero
+.hero
+	position: absolute
+	top: 0
+	left: -160px 
+	z-index: 900
+	border-top-left-radius: 200px
+	border-bottom-left-radius: 200px
+	color: #FFF
+	font-weight: bold
+	padding: 3rem
+	font-size: 4rem
+	background: $primary
+	display: inline-block
+
+@media only screen and (min-width: 600px) 
+	.hero
+		border-radius: 0
+		display: inline-block
+		width: 75%
+		height: 200px
+		left: 50%
+		transform: translateX(-50%)
+		top: -150px
+		text-align: center
+		padding-top: 50px
+		font-size: 3rem
+		font-weight: bold
+		border-top-left-radius: 20rem
+		border-top-right-radius: 20rem
+
+
+// Navbar
+.navbar
+	position: fixed
+	top: 30px
+	left: 0
+	right: 0
+	z-index: 999
+	border-radius: 50px
+	background: $primaryDark
+	transition: all ease-in-out 0.5s
+
+.navbar a
+	font-weight: 600
+	color: $white
+
+.navbar .active
+	color: $color
+
+.navbar .nav-link:hover
+	color: $color
+
+.navbar .nav-link
+	padding-left: 1rem
+	padding-right: 1rem
+	text-transform: uppercase
+	font-size: 0.66rem
+	font-weight: 700
+
+.navbar .dropdown-menu
+	left: 16px
+	background: $primaryDark
+
+.dropdown:hover .dropdown-menu
+	display: block
+
+.dropdown-menu a
+	font-weight: 700
+	background: transparent
+	text-transform: uppercase
+	font-size: 0.66rem
+
+.dropdown-menu a:hover
+	color: $color
+
+.dropdown-menu .dropdown-divider
+	border-color: $lineColor
+
+.cv a 
+	border: 1px solid $lineColor
+	border-radius: 50px
+
+
+@media only screen and (min-width: 600px)
+	.navbar
+		background: transparent !important
+		text-align: center
+
+	.navbar-toggler
+		border-radius: 50px 
+		padding: 10px
+		border-color: $white
+
+	.navbar-toggler-icon
+		color: $white
+
+
+// Sidebar
+.sidebar
+	position: fixed
+	top: 0
+	right: 0
+	height: 100%
+	width: 80px
+	padding: 5px
+	border-left: 0.5px solid $lineColor
+
+.btn-group .btn
+	display: block !important
+	margin: 10px auto
+	border-radius: 50%
+	width: 50px
+	height: 50px
+
+.btn-group
+	display: block
+	position: absolute
+	bottom: 10px
+	left: 10px
+
+.btn-group a 
+	padding-top: 12px
+	background: transparent
+	border-color: $lineColor
+
+.btn-group a:hover i 
+	color: $color
+
+
+
+
+// General
+.line
+	border: 0.5px solid $lineColor
+
+.bg-color
+	background: #232323
+
+.details small
+	color: $color
+
+.details h5
+	font-weight: 900
+
+.details p 
+	font-weight: 700
+	font-size: 0.75rem
+
+.details .key 
+	color: $color
+	text-transform: uppercase
+
+.details .value
+	color: $white
+
+.space 
+	padding-top: 4rem
+	padding-bottom: 4rem
+
+.sticky
+	top: 0
+	border-radius: 0
+	margin: 0 !important
+	background: $primaryDark !important
+
+
+
+.header
+	display: block
+	font-size: 3rem
+	font-weight: 700
+	color: #FFF
+
+.sub-header
+	display: block
+	text-transform: uppercase
+	font-size: 12px
+	color: lightblue
+	line-height: 1.5
+	font-family: $font
+
+.sub-header span
+	font-weight: bold
+
+.color
+	color: $color
+
+.space-up
+	padding-top: 30%
+
+.mh-100
+	min-height: 100%
+
+
+//Intro
+.intro
+	margin-top: 200px
+	margin-bottom: 100px
+
+.type
+	text-transform: uppercase
+	font-size: 0.70rem
+	font-weight: 800
+	color: lightblue
+	font-family: $font
+
+.contact-link
+	border-radius: 40px
+	padding: 18px 40px
+	background: transparent
+	text-transform: uppercase
+	font-size: 11px
+	color: #FFF
+	transition: all ease 1s
+	font-weight: 750
+	font-family: $font
+
+.contact-link:hover
+	border-color: $color
+	color: $color
+
+.contact-link i 
+	margin-left: 10px
+	transition: margin ease-in-out 0.3s
+
+.contact-link:hover i
+	margin-left: 12px
+
+@keyframes toggle
+	0% 
+		opacity: 0
+	50%
+		opacity: 0.5
+	100%
+		opacity: 1
+
+.arrow
+	margin-left: 30px
+	border-radius: 50%
+	border: 1px solid #ccc
+	padding: 12px 15px
+	position: relative
+
+.arrow i
+	color: lightblue
+	animation-name: toggle
+	animation-duration: 2s
+	animation-iteration-count: infinite
+	animation-timing-function: ease-in-out
+
+@media only screen and (min-width: 600px)
+	.space-up
+		padding-top: 0
+
+	.intro
+		margin-top: 0
+		margin-bottom: 0
+		text-align: center
+
+	.intro p 
+		display: none
+
+
+
+// About
+@media only screen and (min-width: 600px)
+	.about 
+		text-align: center
+
+	.about .nbsp
+		display: none
+
+
+// Services
+.icon i 
+	color: $color
+	font-size: 1.7rem
+
+@media only screen and (min-width: 600px)
+	.services 
+		text-align: center
+
+
+
+// Education and Experience
+.rotate
+	margin-top: 20px
+	margin-bottom: 10px
+	position: relative
+
+.rotate small 
+	transform: rotate(-90deg)
+	position: absolute
+	top: 22px
+	left: -20px
+	display: inline-block
+	margin-left: 0
+	padding: 0
+	font-weight: bold
+	font-size: 10px
+	color: lightblue
+
+.rotate p 
+	display: inline-block
+	margin-left: 30px
+	font-weight: bold
+	color: #FFF
+
+@media only screen and (max-width: 600px)
+	.experience
+		text-align: center
+
+	.rotate small
+		display: block
+		transform: rotate(0deg)
+		margin-bottom: 10px
+		position: static
+		text-align: center
+
+	.rotate p 
+		display: block
+		margin-left: 0
+		text-align: center
+
+
+@media only screen and (min-width: 600px)
+	.experience, .education
+		text-align: center
+
+	.rotate small
+		display: block
+		transform: rotate(0deg)
+		margin-bottom: 10px
+		position: static
+		text-align: center
+
+	.rotate p 
+		display: block
+		margin-left: 0
+		text-align: center
+
+
+// Skills
+.skill span
+	text-align: right
+	display: block
+	font-size: 10px
+	color: #FFF
+	padding-left: 10px
+	padding-right: 10px
+
+.skill .progress
+	height: 5px
+
+.skill .progress-bar 
+	background: $color
+
+.w90
+	width: 90%
+
+.w95
+	width: 95%
+
+.w80
+	width: 80%
+
+.w85
+	width: 85%
+
+@media only screen and (max-width: 600px) 
+	.skills p 
+		text-align: center
+
+
+@media only screen and (min-width: 600px) 
+	.skills
+		text-align: center
+
+
+
+// Reviews
+.review 
+	margin-top: 20px
+	margin-bottom: 10px
+	position: relative
+
+.review img 
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	margin-top: 0
+	padding-top: 0
+	float: left
+
+.review p 
+	display: inline-block
+	margin-left: 20px
+	text-align: left
+
+.review b 
+	color: $white
+
+.review small 
+	color: lightblue
+	font-weight: bold
+
+@media only screen and (max-width: 600px)
+	.reviews 
+		text-align: center
+
+	.review
+		display: inline-block
+		text-align: center
+
+	.review p 
+		margin-left: 0
+		margin-right: 0
+
+
+@media only screen and (min-width: 600px)
+	.reviews 
+		text-align: center
+
+	.review
+		display: inline-block
+		text-align: center
+
+	.review p 
+		margin-left: 0
+		margin-right: 0
+
+
+
+// Portfolio
+.portfolio img 
+	width: 100%
+	height: 300px
+	border-radius: 10px
+
+.thumbnail b 
+	color: $white
+
+.portfolio a:hover b
+	color: $color
+
+.thumbnail .overlay
+	position: absolute
+	top: 30%
+	left: 50%
+	background: rgba(0, 0, 0, 0.5)
+	width: 80%
+	height: 60%
+	display: inline
+	transform: translate(-50%, -30%)
+	border-radius: 10px
+	padding: 10px
+	opacity: 0
+	transition: opacity 0.5s ease
+
+.thumbnail .overlay h4 
+	font-family: Georgia
+	margin-top: 40px
+	text-align: left
+	color: #FFF
+	font-weight: bold
+
+.thumbnail:hover .overlay
+	opacity: 1
+
+@media only screen and (min-width: 600px)
+	.portfolio
+		text-align: center
+
+
+
+// Contact
+.contact .details
+	border: 1px solid $lineColor
+	border-radius: 30px
+
+.contact .taocoder
+	font-style: italic
+
+input, textarea 
+	background: transparent
+	padding: 15px 20px
+	padding-bottom: 12px
+	font-family: $font
+	border-color: $lineColor
+	box-shadow: none !important
+	outline: none !important
+
+input
+	border-radius: 30px
+
+input:focus, textarea:focus
+	background: transparent
+	border-color: $lineColor
+
+textarea
+	border-radius: 35px
+	resize: none
+
+@media only screen and (min-width: 600px)
+	.header, .sub-header
+		text-align: center
+
+
+// Small Phones
+@media only screen and (max-width: 600px)
+	
+	.navbar
+		background: transparent
+		text-align: center
+
+	.navbar-toggler
+		border-radius: 50px 
+		padding: 10px
+		border-color: $white
+
+	.navbar-toggler-icon
+		color: $white
+
+	.intro
+		margin-top: 0
+		margin-bottom: 0
+
+	.space-up
+		padding-top: 0
+
+	.col-img, .col-content 
+		width: 100%
+		margin: 0
+
+	.col-img
+		position: relative
+		height: 500px
+
+	.hero
+		border-radius: 0
+		display: inline-block
+		width: 75%
+		height: 200px
+		left: 50%
+		transform: translateX(-50%)
+		top: -150px
+		text-align: center
+		padding-top: 50px
+		font-size: 3rem
+		font-weight: bold
+		border-top-left-radius: 20rem
+		border-top-right-radius: 20rem
+
+	.header, .sub-header
+		text-align: center
+
+	.main
+		margin: 0
+
+	.sidebar
+		display: none
+
+	.intro div 
+		text-align: center
+
+	.arrow
+		display: none
+
+	.type
+		text-align: center
+
+	.intro p 
+		display: none
+
+	.about .nbsp, .nbsp
+		display: none
+
+	.icon
+		text-align: center
+
+	.services p, .about p, .education p
+		text-align: center
+
+
+
+@media only screen and (min-width: 768px)
+	.main
+		margin-right: 80px
+
+	.sidebar
+		display: block
+
+	.intro p 
+		display: block
+		text-align: left
+
+	.intro div 
+		text-align: left
+
+	.header, .sub-header
+		text-align: left
+
+	// Global
+	.about, .services, .education, .experience, .skills, .reviews
+		text-align: left
+
+	.about .nbsp
+		display: inline
+
+
+	.rotate
+		margin-top: 20px
+		margin-bottom: 10px
+		position: relative
+
+	.rotate small 
+		transform: rotate(-90deg)
+		position: absolute
+		top: 22px
+		left: -20px
+		display: inline-block
+		margin-left: 0
+		padding: 0
+		font-weight: bold
+		font-size: 10px
+		color: lightblue
+
+	.rotate p 
+		display: inline-block
+		margin-left: 30px
+		font-weight: bold
+		color: #FFF
+
+
+@media only screen and (min-width: 1200px) 
+	.wrapper
+		padding: 0
+		margin: 0
+		min-height: 100%
+		background: $primary
+
+	.col-img
+		width: 45%
+		height: 100%
+		position: fixed
+		top: 0
+		overflow: hidden
+		background: url('/assets/images/me.jpg')
+		background-size: 100% 100%
+		filter: invert(1) brightness(100%)
+
+	.col-content
+		width: 55%
+		margin-left: 45%
+		min-height: 100%
+
+	.navbar
+		background: $primaryDark!important
+
+	.main
+		margin-right: 80px
+		min-height: 100%
+		height: auto
+
+	.space-up
+		padding-top: 30%
+
+	.intro
+		margin-top: 200px
+		margin-bottom: 100px
+
+	.hero
+		position: absolute
+		width: auto
+		height: 250px
+		top: 0
+		left: 0 
+		z-index: 900
+		border-radius: 0
+		border-top-left-radius: 200px
+		border-bottom-left-radius: 200px
+		color: #FFF
+		font-weight: bold
+		padding: 3rem
+		font-size: 4rem
+		background: $primary
+		display: inline-block
+
+	.type
+		text-align: left
+
+
+
+#overlay
+	height: 100%
+	background: $primary
+	z-index: 1000
+
+.welcome
+	display: inline
+	position: absolute
+	top: 60%
+	left: 50%
+	color: #FFF
+	transform: translate(-50%, -60%)
+	font-family: Georgia
+	font-weight: bold
+
+.ball
+	display: inline
+	position: absolute
+	top: 50%
+	left: 50%
+	color: #FFF
+	transform: translate(-50%, -50%)
+	background: $color
+	width: 0
+	height: 0
+	border-radius: 50%
+	animation-name: ball
+	animation-duration: 1s
+	animation-timing-function: ease
+	animation-iteration-count: 5
+
+@keyframes ball
+	0%
+		width: 20px
+		height: 20px
+	50%
+		width: 30px
+		height: 30px
+	75%
+		width: 45px
+		height: 45px
+	100%
+		width: 50px
+		height: 50px

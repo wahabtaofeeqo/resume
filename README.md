@@ -1,0 +1,1 @@
+This project shows some of the skills and services i provide.
