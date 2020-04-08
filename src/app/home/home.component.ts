@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
 
       const options1 = {
-        strings: ['Welcome To', 'Taocoder'],
+        strings: ['Welcome To: ', 'TaoCoder'],
         typeSpeed: 100,
         backSpeed: 0,
         showCursor: true,
