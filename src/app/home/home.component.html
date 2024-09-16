@@ -1,7 +1,91 @@
-<div class="container-fluid wrapper" id="wrapper">
+<div class="h-screen bg-black flex overflow-hidden">
+	<div class="w-24 h-100 border-r border-slate-500 shadow-sm py-5 flex flex-col justify-between">
+		<div class="flex-1 flex flex-col gap-5">
+			@for (item of tabs; track $index) {
+				<div class="p-2 flex flex-col items-center justify-center gap-2 cursor-pointer tab text-gray-500 hover:text-white" 
+					[class.border-s-2]="selectedTab == item.name.toLowerCase()" (click)="selectedTab = item.name.toLowerCase()">
+					@if (item.image) {
+						<img [src]="item.image" alt="">
+					}
+					@else {
+						<i [class]="item.icon"></i>
+						<span class="text-sm">{{item.name}}</span>
+					}
+				</div>
+			}
+		</div>
+		
+		<div class="p-2 flex flex-col items-center justify-center gap-3 text-gray-500 hover:text-white cursor-pointer">
+			<i class="fa-solid fa-moon"></i>
+			<span class="text-sm">Theme</span>
+		</div>
+	</div>
+
+	<div class="snap-proximity scroll-y h-100 overflow-auto flex-1">
+		<div class="h-100 flex flex-col items-center justify-around snap-center">
+			<div>
+				<img src="/assets/images/avatar-laptop.png" class="mx-auto" alt="">
+				<h4 class="font-black text-6xl md:text-9xl grad text-center">Taofeek O</h4>
+			</div>
+
+			<div class="flex flex-col gap-10 items-center">
+				<button class="py-3 px-5 border border-pink-500 rounded text-white">
+					Meet Me
+				</button>
+	
+				<i class="fa-solid fa-arrow-down fa-xl text-gray-500 fa-beat"></i>
+			</div>
+		</div>
+
+		<div class="h-100 flex items-center justify-center snap-center bg-yellow-500" #about>
+			@defer (on viewport(about)) {
+				<app-about></app-about>
+			}
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid wrapper d-none" id="wrapper">
 
 	<nav class="navbar navbar-expand-xl navbar-dark mx-lg-5" id="navbar">
-
 		<a href="/" class="navbar-brand">
 			<!-- <img src="assets/images/tao1.jpeg" loading="lazy" height="33" width="33" alt="Logo" class="rounded"> -->
 			<span class="ml-2 brand-name">Taofeek</span>
@@ -604,7 +688,6 @@
 	</div>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   	<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -623,10 +706,5 @@
         		<button type="button" class="btn btn-primary d-none">Save changes</button>
       		</div>
     	</div>
-  </div>
-</div>
-
-<div id="overlay">
-	<h4 class="ball"></h4>
-	<h4 class="welcome"></h4>
+  </div> 
 </div>
