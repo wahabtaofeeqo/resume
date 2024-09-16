@@ -14,6 +14,8 @@ declare var $: any;
 
 export class HomeComponent implements OnInit {
 
+  mail = "Taofeekolamilekan218@gmail.com";
+  
     contactForm;
     submitted = false;
 
