@@ -1,1 +1,22 @@
 <router-outlet></router-outlet>
+<div class="fixed top-0 left-0 w-28 h-100 border-r border-slate-600 shadow-sm py-5 flex flex-col justify-between">
+    <div class="flex-1 flex flex-col gap-5">
+        @for (item of tabs; track $index) {
+            <div class="p-2 flex flex-col items-center justify-center gap-2 cursor-pointer tab text-gray-500 hover:text-white" 
+                [ngClass]="selectedTab == item.name.toLowerCase() ? 'border-s-2 text-white' : ''" (click)="selectedTab = item.name.toLowerCase()">
+                @if (item.image) {
+                    <img [src]="item.image" alt="">
+                }
+                @else {
+                    <i [class]="item.icon"></i>
+                    <span class="text-sm">{{item.name}}</span>
+                }
+            </div>
+        }
+    </div>
+    
+    <div class="p-2 flex flex-col items-center justify-center gap-3 text-gray-500 hover:text-white cursor-pointer">
+        <i class="fa-solid fa-moon"></i>
+        <span class="text-sm">Theme</span>
+    </div>
+</div>

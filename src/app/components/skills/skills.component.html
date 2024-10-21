@@ -1,1 +1,15 @@
-<p>skills works!</p>
+<div class="container">
+    <p>Skills</p>
+    <h4 class="text-6xl font-bold mb-24">My Expertise</h4>
+
+    <div class="md:flex gap-3 items-start">
+       @for (skill of [1,1,1,1]; track $index) {
+            <div class="basis-1/4 p-3 bg-sky-100 border-b-2 border-blue-400 rounded">
+                <h4 class="mb-4">Frontend Developemnt</h4>
+                <p class="mb-3">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nisi aut, doloremque laborum velit eveniet natus voluptatem voluptates veniam tenetur ipsam quos, autem sit ad consectetur temporibus beatae a cumque.
+                </p>
+            </div>
+       }
+    </div>
+</div>

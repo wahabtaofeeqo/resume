@@ -7,6 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ObserveDirective } from './observe.directive';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -16,8 +19,11 @@ import { AboutComponent } from './components/about/about.component';
     imports: [
         BrowserModule,
         AboutComponent,
+        SkillsComponent,
+        ObserveDirective,
         AppRoutingModule,
-        ReactiveFormsModule
+        ProjectsComponent,
+        ReactiveFormsModule,
     ], 
     providers: [provideHttpClient(withInterceptorsFromDi())] 
 })

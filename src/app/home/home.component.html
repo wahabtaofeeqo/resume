@@ -1,53 +1,158 @@
-<div class="h-screen bg-black flex overflow-hidden">
-	<div class="w-24 h-100 border-r border-slate-500 shadow-sm py-5 flex flex-col justify-between">
-		<div class="flex-1 flex flex-col gap-5">
-			@for (item of tabs; track $index) {
-				<div class="p-2 flex flex-col items-center justify-center gap-2 cursor-pointer tab text-gray-500 hover:text-white" 
-					[class.border-s-2]="selectedTab == item.name.toLowerCase()" (click)="selectedTab = item.name.toLowerCase()">
-					@if (item.image) {
-						<img [src]="item.image" alt="">
-					}
-					@else {
-						<i [class]="item.icon"></i>
-						<span class="text-sm">{{item.name}}</span>
-					}
+<div class="bg-black flex overflow-hidden wrap" style="height: 200lvh;" #heroWrap id="heroWrap">
+	<canvas #canvas></canvas>
+	<div class="container py-5">
+		<div class="ms-14">
+			<h4 class="rounded algin-self-start border border-sky-100 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block px-3 py-2 text-transparent bg-clip-text">
+				Crafting Software Solutions for different platforms.</h4>
+		</div>
+
+		<div class="flex-1 flex items-center w-full bg-red-500">
+			<div class="content-wrap">
+				<div class="scale w-2/4 flex items-center justify-center text-center mx-auto" #hero>
+					<img src="/assets/images/avatar-laptop.png" width="150px" alt="" class="mx-auto" #logo> 
+					<h4 class="fade-text text-9xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block px-3 py-2 text-transparent bg-clip-text" #title>
+						<span *ngFor="let char of textChars; let i = index" [ngStyle]="{ opacity: getOpacity(i) }">{{ char }}</span>
+					</h4>
 				</div>
-			}
+			</div>
 		</div>
 		
-		<div class="p-2 flex flex-col items-center justify-center gap-3 text-gray-500 hover:text-white cursor-pointer">
-			<i class="fa-solid fa-moon"></i>
-			<span class="text-sm">Theme</span>
+		<div class="flex flex-col gap-8 items-center more-wrap" style="position: fixed; bottom: 10px; left: 50%; transform: translate(-50%, -50%);">
+			<button class="block bg-gradient-to-r from-blue-600 to-indigo-400 text-white font-semibold rounded rounded text-white" style="padding: 1.8px;">
+				<span class="bg-black flex w-full h-full px-5 outline-0" style="padding-top: 12px; padding-bottom: 12px;">
+					Learn More
+				</span>
+			</button>
+
+			<i class="fa-solid fa-arrow-down fa-xl text-white"></i>
 		</div>
 	</div>
 
-	<div class="snap-proximity scroll-y h-100 overflow-auto flex-1">
-		<div class="h-100 flex flex-col items-center justify-around snap-center">
-			<div>
-				<img src="/assets/images/avatar-laptop.png" class="mx-auto" alt="">
-				<h4 class="font-black text-6xl md:text-9xl grad text-center">Taofeek O</h4>
-			</div>
+	<!-- <div class="h-100 flex items-center justify-center snap-center" #skills>
+		@defer (on viewport(skills)) {
+			<app-skills></app-skills>
+		}
+	</div> -->
 
-			<div class="flex flex-col gap-10 items-center">
-				<button class="py-3 px-5 border border-pink-500 rounded text-white">
-					Meet Me
-				</button>
-	
-				<i class="fa-solid fa-arrow-down fa-xl text-gray-500 fa-beat"></i>
-			</div>
-		</div>
+	<!-- <div class="h-100 flex items-center justify-center snap-center bg-white" #about>
+		@defer (on viewport(about)) {
+			<app-about></app-about>
+		}
+	</div> -->
 
-		<div class="h-100 flex items-center justify-center snap-center bg-yellow-500" #about>
-			@defer (on viewport(about)) {
-				<app-about></app-about>
-			}
+	<!-- <div class="h-100 flex items-center justify-center snap-center bg-sky-100" #project>
+		@defer (on viewport(project)) {
+			<app-projects></app-projects>
+		}
+	</div> -->
+</div>
+
+<div class="flex-1 flex items-center w-full bg-black" style="height: 200lvh;" #aboutWrap id="aboutWrap">
+	<div class="content-wrap">
+		<div class="scale flex-inline text-center mx-auto w-2/4" #about>
+			<div class="text-center py-3">
+				<h4 class="text-white text-6xl mb-4 font-bold">Software Engineer</h4>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quisquam dicta aperiam ipsa rem tempora totam! Similique repudiandae, repellat velit quod ea voluptatem earum facere optio, qui porro ipsa unde.
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
 
+<div class="flex-1 flex items-center w-full bg-black lines" style="height: 200lvh;" #devWrap id="devWrap">
+	<div class="content-wrap">
+		<div class="scale flex-inline text-center mx-auto w-2/4" #dev>
+			<div class="text-center py-3">
+				<h4 class="text-white text-6xl mb-4 font-bold">Developing for Platforms</h4>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quisquam dicta aperiam ipsa rem tempora totam! Similique repudiandae, repellat velit quod ea voluptatem earum facere optio, qui porro ipsa unde.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="flex-1 flex items-center w-full bg-black" style="height: 200lvh;" #devOpsWrap id="devOpsWrap">
+	<div class="content-wrap">
+		<div class="scale flex-inline text-center mx-auto w-2/4" #devOps>
+			<div class="text-center py-3">
+				<h4 class="text-white text-6xl mb-4 font-bold">DevOps / Cloud Engineer</h4>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quisquam dicta aperiam ipsa rem tempora totam! Similique repudiandae, repellat velit quod ea voluptatem earum facere optio, qui porro ipsa unde.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="bg-black py-5" style="height: 100lvh;">
+	<div class="w-4/6 mx-auto ontainer gap-3 flex items-center h-full border p-3" id="contact">
+		<div class="basis-3/4 border h-full p-3">
+			<b class="header">Contact</b>
+			<b class="mb-5 sub-header">Let's talk</b>
+			<form [formGroup]="contactForm" (ngSubmit)="sendMessage(contactForm.value)">
+				<div class="form-group">
+					<input type="text" formControlName="name" class="form-control rounded-0" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.name.errors }" placeholder="Full Name" />
+					<div *ngIf="submitted && contactForm.controls.name.errors" class="invalid-feedback">
+						<div *ngIf="contactForm.controls.name.errors.required" class="text-center">
+							Name is required
+						</div>
+					</div>
+				</div>
 
+				<div class="form-group">
+					<input type="text" formControlName="email" class="form-control rounded-0" placeholder="Email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+
+					<div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+						<div *ngIf="f.email.errors.required">Email is Required</div>
+						<div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<textarea class="form-control rounded-0" formControlName="message" rows="5" placeholder="Message" [ngClass]="{'is-invalid': submitted && f.message.errors}"></textarea>
+
+					<div *ngIf="submitted && f.message.errors" class="invalid-feedback text-center">
+						<div *ngIf="f.message.errors.required">
+							Message is Required
+						</div>
+					</div>
+				</div>
+
+				<button class="btn btn-secondary contact-link mt-3">Send Message <i class="fa fa-arrow-right"></i></button>
+			</form>
+		</div>
+		<div class="basis-1/4 bg-white border h-full">
+			<div class="detail p-4 text-whit">
+				<!-- <h5 class="text-whit mb-0">Taofeeq Wahab</h5>
+				<small class="font-weight-bold text-5xl block mb-10">Software Developer</small> -->
+
+				<div class="mt-4 grid grid-cols-2 gap-2">
+					<!-- <span class="key">Phone:</span>
+					<span class="value"> &nbsp;&nbsp; +2348136974417</span>
+
+					<span class="key">Email:</span>
+					<span class="value"> &nbsp;&nbsp; {{mail}}</span> -->
+					<!-- <p class="grid grid-cols-2 gap-2 mb-4">
+						<span class="key">Phone:</span>
+						<span class="value"> &nbsp;&nbsp; +2348136974417</span>
+					</p> -->
+
+					<!-- <p class="grid grid-cols-2 gap-2 mb-4">
+						<span class="key">Email:</span>
+						<span class="value"> &nbsp;&nbsp; {{mail}}</span>
+					</p>
+
+					<p class="grid grid-cols-2 gap-2">
+						<span class="key">LinkedIn:</span>
+						<span class="value"> &nbsp;&nbsp; linkedin.com/in/wahabtaofeeqo</span>
+					</p> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
@@ -599,11 +704,11 @@
 						<form [formGroup]="contactForm" (ngSubmit)="sendMessage(contactForm.value)">
 							<div class="form-group">
 								<input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && contactForm.controls.name.errors }" placeholder="Full Name" />
-			                    <div *ngIf="submitted && contactForm.controls.name.errors" class="invalid-feedback">
-			                        <div *ngIf="contactForm.controls.name.errors.required" class="text-center">
-			                        	Name is required
-			                        </div>
-			                    </div>
+								<div *ngIf="submitted && contactForm.controls.name.errors" class="invalid-feedback">
+									<div *ngIf="contactForm.controls.name.errors.required" class="text-center">
+										Name is required
+									</div>
+								</div>
 							</div>
 
 							<div class="form-group">
@@ -679,9 +784,9 @@
 		<div class="sidebar">
 			<div class="position-relative mh-100">
 				<div class="btn-group" role="group">
-				    <a href="https://github.com/wahabtaofeeqo" target="_blank" class="btn btn-secondary"><i class="fa fa-github"></i></a>
-				    <a href="https://wa.me/2348136974417" target="_blank" class="btn btn-secondary"><i class="fa fa-whatsapp"></i></a>
-				    <a href="https://linkedin.com/in/wahab-taofeek-282272132" target="_blank" class="btn btn-secondary"><i class="fa fa-linkedin"></i></a>
+					<a href="https://github.com/wahabtaofeeqo" target="_blank" class="btn btn-secondary"><i class="fa fa-github"></i></a>
+					<a href="https://wa.me/2348136974417" target="_blank" class="btn btn-secondary"><i class="fa fa-whatsapp"></i></a>
+					<a href="https://linkedin.com/in/wahab-taofeek-282272132" target="_blank" class="btn btn-secondary"><i class="fa fa-linkedin"></i></a>
 				</div>
 			</div>
 		</div>
@@ -690,21 +795,21 @@
 
 <!-- Modal -->
 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  	<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-    	<div class="modal-content">
-      		<div class="modal-header d-none">
-        		<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          			<span aria-hidden="true">&times;</span>
-        		</button>
-      		</div>
-      		<div class="modal-body">
-      			<p id="status">Please wait...</p>
-      		</div>
-      		<div class="modal-footer py-2">
-        		<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">OK</button>
-        		<button type="button" class="btn btn-primary d-none">Save changes</button>
-      		</div>
-    	</div>
+	  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+		<div class="modal-content">
+			  <div class="modal-header d-none">
+				<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				  <p id="status">Please wait...</p>
+			  </div>
+			  <div class="modal-footer py-2">
+				<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">OK</button>
+				<button type="button" class="btn btn-primary d-none">Save changes</button>
+			  </div>
+		</div>
   </div> 
 </div>
