@@ -28,6 +28,7 @@ $primaryDark: #444444
 	min-height: 100%
 	background: $primary
 	display: none
+	transition: display 5s ease
 
 .col-img
 	width: 45%
@@ -39,11 +40,6 @@ $primaryDark: #444444
 	background-size: 100% 100%
 	//filter: invert(1) brightness(100%)
 
-.grad
-	background: -webkit-linear-gradient(#eee, #333)
-	-webkit-background-clip: text
-	-webkit-text-fill-color: transparent
-	
 .col-content
 	width: 55%
 	margin-left: 45%
@@ -53,7 +49,6 @@ $primaryDark: #444444
 	margin-right: 80px
 	min-height: 100%
 	height: auto
-
 
 @media only screen and (min-width: 600px)
 
@@ -168,6 +163,7 @@ $primaryDark: #444444
 	.navbar-toggler-icon
 		color: $white
 
+
 // Sidebar
 .sidebar
 	position: fixed
@@ -199,6 +195,9 @@ $primaryDark: #444444
 .btn-group a:hover i 
 	color: $color
 
+
+
+
 // General
 .line
 	border: 0.5px solid $lineColor
@@ -220,8 +219,8 @@ $primaryDark: #444444
 	color: $color
 	text-transform: uppercase
 
-// .details .value
-// 	color: $white
+.details .value
+	color: $white
 
 .space 
 	padding-top: 4rem
@@ -232,6 +231,8 @@ $primaryDark: #444444
 	border-radius: 0
 	margin: 0 !important
 	background: $primaryDark !important
+
+
 
 .header
 	display: block
@@ -328,6 +329,8 @@ $primaryDark: #444444
 	.intro p 
 		display: none
 
+
+
 // About
 @media only screen and (min-width: 600px)
 	.about 
@@ -335,6 +338,7 @@ $primaryDark: #444444
 
 	.about .nbsp
 		display: none
+
 
 // Services
 .icon i 
@@ -344,6 +348,8 @@ $primaryDark: #444444
 @media only screen and (min-width: 600px)
 	.services 
 		text-align: center
+
+
 
 // Education and Experience
 .rotate
@@ -385,6 +391,7 @@ $primaryDark: #444444
 		margin-left: 0
 		text-align: center
 
+
 @media only screen and (min-width: 600px)
 	.experience, .education
 		text-align: center
@@ -400,6 +407,7 @@ $primaryDark: #444444
 		display: block
 		margin-left: 0
 		text-align: center
+
 
 // Skills
 .skill span
@@ -560,6 +568,7 @@ textarea
 	.header, .sub-header
 		text-align: center
 
+
 // Small Phones
 @media only screen and (max-width: 600px)
 	
@@ -637,6 +646,8 @@ textarea
 
 	.services p, .about p, .education p
 		text-align: center
+
+
 
 @media only screen and (min-width: 768px)
 	.main
@@ -789,101 +800,10 @@ textarea
 		width: 50px
 		height: 50px
 
-.delay
-	position: absolute
-	animation-name: delay
-	animation-duration: 0.3s
-	animation-timing-function: ease-in
-	animation-iteration-count: 1
-
-@keyframes delay
+@keyframes fadeIn
 	0%
-		left: -500px
-
-	50%
-		left: -100px
-
-	100%
-		left: 0px
-
-.more-wrap
-	transition: opacity 3s
-	opacity: 0
-
-.dev-head
-	.more-wrap
-		opacity: 1
-
-// @keyframes scaleOut 
-// 	0% 
-// 		transform: scale(0)
-// 		opacity: 0
-  
-// 	100% 
-// 		transform: scale(1)
-// 		opacity: 1
-
-// .angular-logo 
-// 	animation: scaleOut 1s ease-in-out forwards
-// 	transform-origin: center
-// 	width: max(calc(700 * min(100vw, 2560px) / 1470), 350px)
-// 	height: auto
-
-// @supports (height: 100lvh)
-// 	.wrap 
-// 		200lvh
-
-
-.fade-text span
-	transition: opacity 3s ease
-
-.content-wrap
-	position: fixed
-	top: 50%
-	left: 0
-	right: 0
-	// left: 50%
-	transform: translateY(-50%)
-
-	&.scale 
-		transition: all 1s
 		opacity: 0
-.lines
-	position: relative
-	width: 100%
-	overflow: hidden
-	display: flex
-	justify-content: center
-	align-items: center
-	text-align: center
-	background: rec
-
-.lines::before, 
-.lines::after 
-	content: ''
-	position: absolute
-	width: 200%
-	height: 200%
-	background-repeat: no-repeat
-	background-size: 100px 100px
-	background-position: center
-	opacity: 0.4
-	z-index: 0
-
-.rlines::before 
-	background-image: linear-gradient(135deg, rgba(255, 0, 100, 0.6) 30%, transparent 30%) 10% 10%,linear-gradient(135deg, rgba(255, 0, 100, 0.6) 30%, transparent 30%) 30% 20%, linear-gradient(135deg, rgba(0, 0, 255, 0.6) 30%, transparent 30%) 50% 30%,linear-gradient(135deg, rgba(255, 0, 100, 0.6) 30%, transparent 30%) 70% 40%
-	background-size: 100px 100px
-
-.lines::after 
-	background-image: linear-gradient(135deg, rgba(0, 0, 255, 0.6) 30%, transparent 30%) 15% 25%,linear-gradient(135deg, rgba(255, 0, 100, 0.6) 30%, transparent 30%) 35% 50%,linear-gradient(135deg, rgba(0, 0, 255, 0.6) 30%, transparent 30%) 55% 75%,linear-gradient(135deg, rgba(255, 0, 100, 0.6) 30%, transparent 30%) 75% 90%
-	background-size: 100px 100px
-
-canvas
-	position: absolute
-	top: 0
-	left: 0
-	bottom: 0
-	right: 0
-	width: 100%
-	height: 100%
-	z-index: 1
+	50%
+		opacity: 0.5
+	100%
+		opacity: 1

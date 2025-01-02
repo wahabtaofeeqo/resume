@@ -3,12 +3,12 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.sass']
 })
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class IndexComponent implements OnInit, AfterViewInit {
 
   submitted = false;
   selectedTab = 'tao';
