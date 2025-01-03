@@ -28,7 +28,9 @@ $primaryDark: #444444
 	min-height: 100%
 	background: $primary
 	display: none
-	transition: display 5s ease
+	animation: fadeIn
+	animation-duration: 3s
+	animation-iteration-count: 1
 
 .col-img
 	width: 45%
@@ -37,7 +39,7 @@ $primaryDark: #444444
 	top: 0
 	overflow: hidden
 	background: url('/assets/images/table2.jpg')
-	background-size: 100% 100%
+	// background-position: top bottom
 	//filter: invert(1) brightness(100%)
 
 .col-content
@@ -807,3 +809,16 @@ textarea
 		opacity: 0.5
 	100%
 		opacity: 1
+
+@keyframes fadeOut
+	0%
+		opacity: 1
+
+	100%
+		opacity: 0
+		display: none
+
+.fade-out
+	animation: fadeOut
+	animation-duration: 2s
+	animation-iteration-count: 1

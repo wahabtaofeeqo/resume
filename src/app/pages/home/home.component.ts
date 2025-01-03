@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     const typed = new Typed('.element', options);
 
     const options1 = {
-      strings: ['Hello', "Let's chat!"],
+      strings: ['Welcome', "Let me show you around!"],
       typeSpeed: 100,
       backSpeed: 0,
       showCursor: true,
@@ -50,8 +50,8 @@ export class HomeComponent implements OnInit {
       cursorChar: '*',
       loop: false,
       onComplete: (self) => {
-        this.mainElement.nativeElement.style.display = "block"
-        document.getElementById("overlay").style.display = "none";
+        document.getElementById("wrapper").style.display = "block"
+        document.getElementById("overlay").style.display = "none"
       },
     }
 
